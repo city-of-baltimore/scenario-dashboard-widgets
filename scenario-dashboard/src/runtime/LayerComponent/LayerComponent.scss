@@ -1,0 +1,20 @@
+#layer-component {
+    .layer-tabs {
+        margin-top: 10px;
+    }
+
+    .layer-tabs__content {
+        height: calc(100% - 139px);
+        width: calc(100% - 16px);
+        overflow-y: auto;
+        position: absolute;
+    }
+
+    #layer-search {
+        margin-top: 10px;
+
+        .dropdown-button:hover {
+            border-color: var(--primary-500);
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "name": "scenario-database-config",
+    "label": "Scenario Database Config",
+    "type": "widget",
+    "version": "1.11.0",
+    "dependency": ["jimu-arcgis"],
+    "exbVersion": "1.11.0",
+    "author": "Andrew Shaw",
+    "description": "Add layers, delete layers, or delete templates from Scenario database.",
+    "copyright": "",
+    "license": "",
+    "properties": {},
+    "translatedLocales": ["en"],
+    "defaultSize": {
+        "width": 800,
+        "height": 500
+    }
+}

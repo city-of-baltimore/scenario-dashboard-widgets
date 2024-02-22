@@ -1,0 +1,176 @@
+#layer-list-component {
+    #no-layers-message {
+        background-color: #edf7f9;
+        padding: 5px;
+    }
+
+    .esri-layer-list {
+        height: calc(100vh - 250px);
+        overflow-y: auto;
+        background-color: var(--white);
+
+        .esri-layer-list__no-items {
+            display: none;
+        }
+
+        .esri-layer-list__item {
+            background-color: var(--white);
+        }
+
+        .esri-layer-list__item-container {
+            padding-left: 0;
+            animation: new-item 5s ease-out;
+            border: none;
+
+            .esri-layer-list__item-label {
+                position: relative;
+                cursor: move;
+
+                .esri-layer-list__item-toggle {
+                    position: absolute;
+                    height: 100%;
+                }
+
+                .esri-layer-list__item-toggle:hover {
+                    background-color: var(--secondary-100);
+                }
+
+                .esri-layer-list__item-title {
+                    margin-left: 25px;
+                }
+
+                .esri-icon-non-visible {
+                    color: var(--light-800);
+                }
+            }
+
+            .esri-layer-list__item-label:has(.esri-icon-non-visible) {
+                color: var(--light-800);
+            }
+
+            .esri-layer-list__item-actions-menu-item--active[aria-label="Legend"] {
+                transform: rotate(180deg);
+            }
+        }
+
+        .esri-layer-list-panel {
+            margin: 0 0 5px 27px;
+            background-color: var(--light);
+
+            .esri-layer-list-panel__content {
+                padding: 5px 0 5px 10px;
+            }
+
+            .esri-layer-list-panel__content:has(.legend__templates) {
+                border-top: 2px var(--light-300) solid;
+            }
+
+            .esri-legend {
+                background-color: transparent;
+            }
+
+            .esri-legend__service {
+                padding: 0;
+            }
+
+            .esri-legend__layer-child-table {
+                margin: 0;
+            }
+        }
+
+        .esri-layer-list__item-actions {
+            background-color: var(--light);
+
+            .esri-layer-list__item-actions-list .esri-disabled-element,
+            .esri-layer-list__item-actions-list .esri-disabled-element:hover {
+                color: var(--light-800);
+                cursor: default;
+            }
+        }
+    }
+
+
+    #layer-list__buttons {
+        display: grid;
+        grid-template-columns: 1fr 80px;
+        grid-template-rows: repeat(2, 50%);
+
+        button {
+            padding: 3px;
+        }
+
+        #clear-all-button-grid-item {
+            grid-column: 1;
+            grid-row: 1;
+            border-bottom: 2px var(--light-300) solid !important;
+
+            #clear-all-button {
+                padding-left: 0;
+
+                svg {
+                    margin-right: 0;
+                    margin-bottom: 2px;
+                }
+            }
+        }
+
+        #legend-button-grid-item {
+            grid-column: 2;
+            grid-row: 1;
+            border-bottom: 2px var(--light-300) solid;
+
+            label {
+                font-size: var(--calcite-font-size--1);
+                position: relative;
+                top: 4px;
+            }
+
+            #legend-button {
+                position: relative;
+                bottom: 2px;
+            }
+        }
+
+        #layer-visibility-button-grid-item {
+            grid-column: 1;
+            grid-row: 2;
+        }
+    }
+}
+
+
+.color-picker-block {
+    display: inline-block;
+    position: relative;
+    top: 11px;
+    left: 5px;
+}
+
+.layer-size-slider > input {
+    display: inline-block;
+    width: 65%;
+    position: relative;
+    top: 3px;
+    margin: 0 10px;
+}
+
+#picture-marker-warning {
+    margin-top: 10px;
+
+    div {
+        margin-top: 10px;
+    }
+}
+
+#show-legend-button:hover:not(.disabled), #hide-legend-button:hover:not(.disabled) {
+    color: var(--primary-500);
+}
+
+#legend-button svg {
+    margin-left: 0.5rem;
+}
+
+.layer-style-modal.modal-backdrop.fade.show {
+    opacity: 0;
+}
+

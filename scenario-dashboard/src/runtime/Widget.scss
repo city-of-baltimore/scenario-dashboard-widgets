@@ -1,0 +1,119 @@
+.jimu-widget {
+    position: relative;
+}
+
+.p-5 {
+    padding: 0.5rem !important;
+}
+
+
+/* Grid positioning */
+#scenario-dashboard-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    font-size: 125% !important;
+
+    .grid-item {
+        padding: 0.5rem !important;
+        position: relative;
+    }
+
+    #template-component__grid-item {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #layer-component__grid-item {
+        grid-column: 1;
+        grid-row: 2 / 4;
+    }
+
+    #layer-list__grid-item {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        background-color: var(--white);
+    }
+
+    #bottom-grid-item {
+        grid-column: 2;
+        grid-row: 3;
+        background-color: var(--white);
+        bottom: 90%;
+    }
+
+    .loading {
+        height: 80px;
+        width: 200px;
+    }
+}
+
+/* Buttons and icons */
+.add-button {
+    width: 100%;
+    display: block;
+
+    .icon-btn-sizer {
+        justify-content: left;
+        text-align: left;
+    }
+
+    .jimu-icon {
+        margin-right: 4px !important;
+        margin-left: 0 !important;
+        margin-bottom: 3px;
+    }
+}
+
+#open-save-template-button {
+    .jimu-icon {
+        margin-bottom: 4px;
+    }
+    position: absolute;
+    padding: 0rem 0.75rem;
+}
+
+.btn-primary {
+    color: var(--dark-800);
+    background-color: var(--secondary-500);
+    border-color: var(--secondary-500);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-200);
+    border-color: var(--secondary-200);
+}
+
+.advanced-select-menu .select-item-placeholder {
+    margin: 0 !important;
+    width: 0 !important;
+}
+
+.dropdown-item:hover {
+    background-color: var(--white) !important;
+}
+
+.multiple-select-tool {
+    display: none !important;
+}
+
+.jimu-dropdown-item > .jimu-checkbox {
+    display: none !important;
+}
+
+@keyframes new-item {
+    from {background-color: var(--secondary-100)}
+    50% {background-color: var(--secondary-100)}
+    to {background-color: transparent}
+}
+
+.modal-content .menu-navigation .nav-link.active {
+    cursor: default;
+}
+
+.export-download-link {
+    text-align: center;
+}
