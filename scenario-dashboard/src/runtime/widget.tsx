@@ -112,7 +112,6 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
 
         this.fetchObjects("Layer", layers);
         this.fetchObjects("Template", templates);
-
     }
 
     fetchObjects = (objectType, objectParams) {
