@@ -844,11 +844,15 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
                     </div>
                     <div id="bottom-grid-item" className="grid-item">
                         <div>
-                            <ExportCSVComponent
-                                onExportData={this.onExportData}
-                                status={this.state.exportStatus}
-                                downloadLink={this.state.exportDownloadLink}
-                            />
+                        {
+                            this.props.config.canExportData && (
+                                <ExportCSVComponent
+                                    onExportData={this.onExportData}
+                                    status={this.state.exportStatus}
+                                    downloadLink={this.state.exportDownloadLink}
+                                />
+                            )
+                        }
                         </div>
                         <div>
                             <SaveTemplateComponent
