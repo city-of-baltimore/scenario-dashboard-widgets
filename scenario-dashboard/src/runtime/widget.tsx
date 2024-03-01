@@ -101,7 +101,8 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
             console.error(e);
             alert("Error loading url parameters, please try again!");
             return;
-        }    }
+        }
+    }
 
     /**
      * Loads Layers and Templates/Scenarios that are in url parameters 
