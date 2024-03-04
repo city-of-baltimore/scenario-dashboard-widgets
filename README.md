@@ -60,3 +60,17 @@ The oem-database-config widget contains the following components:
 - DeleteCategory
 - DeleteLayer
 - DeleteTemplate
+
+## Contributing to these widgets
+
+This project will use issues and branching to track changes from external contributors. If you have a change, please find or open a GitHub issue describing the reason for the change.
+
+Name your branch based on the issue (ex. issue-2).
+
+Reference the issue in your commit message, along with a description of the code changed.
+
+Once the code is ready, open a pull request for review.
+
+[Read more about creating a branch](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project#creating-a-branch-to-work-on)
+
+Want to contribute to this README?
