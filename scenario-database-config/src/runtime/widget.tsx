@@ -10,6 +10,7 @@ import AddCategory from "./AddCategory";
 import DeleteCategory from "./DeleteCategory";
 import OAuthInfo from "esri/identity/OAuthInfo";
 import esriId from "esri/identity/IdentityManager";
+import ReactGA from "react-ga4";
 
 /**
  * This widget allows users to update the database for the Scenario dashboard by adding Layers,
@@ -24,6 +25,9 @@ class Widget extends Component<AllWidgetProps<any>, {}> {
 
     componentDidMount() {
         try {
+            ReactGA.initialize([{
+                "trackingId": this.props.config.googleAnalyticsId
+            }]);
             this.templateTable = new FeatureLayer({url: this.props.config.templateTableUrl});
             this.layerTable = new FeatureLayer({url: this.props.config.layerTableUrl});
             this.categoryTable = new FeatureLayer({url: this.props.config.categoryTableUrl});
@@ -50,6 +54,11 @@ class Widget extends Component<AllWidgetProps<any>, {}> {
      */
     addLayer = async (title: string, url: string, scope: string, source: string,
                       description: string, categoryId: number, renderer?: string, filter?: string) => {
+        ReactGA.event({
+            "category": "layer",
+            "action": "added",
+            "label": title
+        });
         try {
             let attributes = {
                 TITLE: title,

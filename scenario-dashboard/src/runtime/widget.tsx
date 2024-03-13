@@ -16,10 +16,8 @@ import SaveTemplateComponent from './SaveTemplateComponent'
 import LayerListComponent from "./LayerListComponent/LayerListComponent";
 import TemplateComponent from "./TemplateComponent/TemplateComponent";
 import LayerWrapper from "./LayerWrapper";
-import { request } from '@esri/arcgis-rest-request';
 import ExportCSVComponent from './ExportCSVComponent';
 import ReactGA from "react-ga4";
-
 
 interface WidgetState {
     jimuMapView: JimuMapView // JimuMapView of the linked Map
@@ -302,6 +300,10 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
      * @param title the title of the new Template
      */
     saveTemplate = async (title: string) => {
+        ReactGA.event({
+            category: "scenario",
+            action: "saved",          
+        });
         try {
             if (title) {
                 let sameTitle = await this.templateTable.queryFeatureCount({
@@ -453,6 +455,18 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
             }
 
         }
+    }
+
+    /**
+     * Track the user changing categories
+     * @param categoryTitle title of the category being selected
+     */
+    onCategoryChange = (categoryTitle) => {
+        ReactGA.event({
+            category: "category",
+            action: "selected",
+            label: categoryTitle
+        })
     }
 
     /**
@@ -824,6 +838,7 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
                             categories={Array.from(this.state.categories.values())}
                             activeLayers={this.state.activeLayers}
                             onAddLayer={this.addActiveLayer}
+                            onCategoryChange={this.onCategoryChange}
                         />
                     </div>
                     <div
