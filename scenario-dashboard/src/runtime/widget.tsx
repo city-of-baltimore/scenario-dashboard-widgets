@@ -18,6 +18,8 @@ import TemplateComponent from "./TemplateComponent/TemplateComponent";
 import LayerWrapper from "./LayerWrapper";
 import { request } from '@esri/arcgis-rest-request';
 import ExportCSVComponent from './ExportCSVComponent';
+import ReactGA from "react-ga4";
+
 
 interface WidgetState {
     jimuMapView: JimuMapView // JimuMapView of the linked Map
@@ -54,6 +56,11 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
 
     async componentDidMount() {
         try {
+            ReactGA.initialize([
+                {
+                    "trackingId": this.props.config.googleAnalyticsId
+                }]
+            );
             this.templateTable = new FeatureLayer({url: this.props.config.templateTableUrl});
             this.layerTable = new FeatureLayer({url: this.props.config.layerTableUrl});
             this.categoryTable = new FeatureLayer({url: this.props.config.categoryTableUrl});
@@ -638,6 +645,10 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
      * Uses extract data to export all layers in the scene
      */
     onExportData = async () => {
+        ReactGA.event({
+            category: "export",
+            action: "initiated",          
+        });
         // Remove old values from exportDownloadLink
         this.setState({exportDownloadLink: ""});
         if (!confirm("Export generates a csv of all layers listed above. Please proceed only if necessary. \n\nTo export these layers as a csv, click OK.\n\n To abort, click Cancel.")) {
