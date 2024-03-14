@@ -55,8 +55,8 @@ class Widget extends Component<AllWidgetProps<any>, {}> {
     addLayer = async (title: string, url: string, scope: string, source: string,
                       description: string, categoryId: number, renderer?: string, filter?: string) => {
         ReactGA.event({
-            "category": "layer",
-            "action": "added",
+            "category": "scenario_navigation",
+            "action": "layer_added",
             "label": title
         });
         try {

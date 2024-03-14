@@ -301,8 +301,8 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
      */
     saveTemplate = async (title: string) => {
         ReactGA.event({
-            category: "scenario",
-            action: "saved",          
+            category: "scenario_navigation",
+            action: "scenario_saved",
         });
         try {
             if (title) {
@@ -463,8 +463,8 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
      */
     onCategoryChange = (categoryTitle) => {
         ReactGA.event({
-            category: "category",
-            action: "selected",
+            category: "scenarion_navigation",
+            action: "category_selected",
             label: categoryTitle
         })
     }
@@ -660,8 +660,8 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
      */
     onExportData = async () => {
         ReactGA.event({
-            category: "export",
-            action: "initiated",          
+            category: "scenario_navigation",
+            action: "export_initiated",
         });
         // Remove old values from exportDownloadLink
         this.setState({exportDownloadLink: ""});
