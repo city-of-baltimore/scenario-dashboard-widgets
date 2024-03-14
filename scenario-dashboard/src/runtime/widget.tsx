@@ -465,7 +465,8 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
         ReactGA.event({
             category: "scenarion_navigation",
             action: "category_selected",
-            label: categoryTitle
+            label: "category_title",
+            value: categoryTitle
         })
     }
 
