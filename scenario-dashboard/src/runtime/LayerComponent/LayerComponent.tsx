@@ -28,7 +28,7 @@ class LayerComponent extends Component<AddLayersProps, {}> {
                     id={"category-" + category.id + "-tab"}
                     className="tab"
                     title={category.title + " (" + category.layerWrappers.length + ")"}
-                    // onClick={this.props.onCategoryChange(category.title)}
+                    onClick={() => {this.props.onCategoryChange(category.title)}}
                 >
                     <div id={"category-" + category.id + "-tab-content"} className="layer-tabs__content p-5 border">
                         {category.layerWrappers.map((layerWrapper) => {
