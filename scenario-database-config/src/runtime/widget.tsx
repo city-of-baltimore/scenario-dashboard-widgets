@@ -56,7 +56,9 @@ class Widget extends Component<AllWidgetProps<any>, {}> {
                       description: string, categoryId: number, renderer?: string, filter?: string) => {
         ReactGA.event({
             category: "scenario_navigation",
-            action: "layer_added_" + title
+            action: "layer_added"
+            label: title,
+            value: 1
         });
         try {
             let attributes = {
