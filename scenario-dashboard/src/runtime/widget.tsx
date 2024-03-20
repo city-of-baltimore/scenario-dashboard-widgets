@@ -57,7 +57,8 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
             ReactGA.initialize([
                 {
                     "trackingId": this.props.config.googleAnalyticsId
-                }]
+                }
+            ]
             );
             this.templateTable = new FeatureLayer({url: this.props.config.templateTableUrl});
             this.layerTable = new FeatureLayer({url: this.props.config.layerTableUrl});
@@ -464,7 +465,7 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
     onCategoryChange = (categoryTitle) => {
         ReactGA.event({
             category: "scenarion_navigation",
-            action: "category_selected_",
+            action: "category_selected",
             label: categoryTitle,
             value: 1
         })
