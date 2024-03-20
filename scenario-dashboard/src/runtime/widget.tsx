@@ -437,6 +437,14 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
      * @param layerWrapper the Layer to add
      */
     addActiveLayer = async (layerWrapper: LayerWrapper) => {
+
+        ReactGA.event({
+            category: "scenario_navigation",
+            action: "layer_selected",
+            label: layerWrapper.title,
+            value: 1
+        });
+
         if (!layerWrapper.layer) {
             await this.createLayer(layerWrapper);
         }
@@ -476,6 +484,13 @@ class Widget extends Component<AllWidgetProps<any>, WidgetState> {
      * @param template the Template to add
      */
     addActiveTemplate = async (template: Template) => {
+
+        ReactGA.event({
+            category: "scenario_navigation",
+            action: "scenario_selected",
+            label: template.title,
+            value: 1
+        });
 
         let newActiveTemplates = this.state.activeTemplates.slice();
         let newActiveLayers = this.state.activeLayers.slice();
