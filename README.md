@@ -4,7 +4,7 @@
 This repository is the widgets for the dashboard the Baltimore City Digital Services Team built with the Baltimore Office of Emergency Management (OEM). The purpose was to allow OEM to view many overlapping layers grouped by "Scenarios" so that in an emergency they could quickly navigate to the exact view they needed. It allows an admin to quickly add or remove additional layers through a database view. These widgets and apps are built to be used with ArcGIS Experience Builder.
 
 ## Local Machine Setup
-Please navigate to https://github.com/city-of-baltimore/docker-oem-dashboard to get set up with docker
+Please navigate to https://github.com/city-of-baltimore/scenario-dashboard-docker to get set up with docker
 
 ## The code
 This repository contains two widgets:
